@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Year Anniversary 💜</title>
+
+<style>
+:root{
+  --bg1:#faf7ff;
+  --bg2:#eadfff;
+  --bg3:#d8c8ff;
+  --deep:#4f3f82;
+}
+
+*{box-sizing:border-box;font-family:"Segoe UI",system-ui,sans-serif}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+  overflow:hidden;
+}
+
+/* ===== แสงพื้นหลัง ===== */
+.glow{
+  position:fixed;
+  width:520px;
+  height:520px;
+  background:radial-gradient(circle,rgba(205,180,255,.55),transparent 70%);
+  filter:blur(90px);
+  animation:glowMove 22s infinite alternate ease-in-out;
+  z-index:0;
+}
+.g1{top:-200px;left:-180px}
+.g2{bottom:-220px;right:-180px;animation-delay:6s}
+@keyframes glowMove{to{transform:translateY(160px)}}
+
+/* ===== ของลอย ===== */
+.bg{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+.float-img,.float-heart{
+  position:absolute;
+  bottom:-80px;
+  opacity:.75;
+  animation:rise linear forwards;
+}
+.float-img{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 6px 14px rgba(120,90,200,.3);
+}
+@keyframes rise{
+  from{transform:translateY(0) scale(.9);opacity:0}
+  25%{opacity:.8}
+  to{transform:translateY(-120vh) scale(1.05);opacity:0}
+}
+
+/* ===== หน้าเข้า ===== */
+#intro{
+  position:fixed;
+  inset:0;
+  z-index:40;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+    radial-gradient(circle at top,#f1ebff,transparent 55%),
+    radial-gradient(circle at bottom,#cdbbff,transparent 55%),
+    linear-gradient(135deg,#cbb6ff,#9b7dff);
+  overflow:hidden;
+  transition:1.2s ease;
+}
+.intro-ring{
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  background:conic-gradient(
+    rgba(255,255,255,0),
+    rgba(255,255,255,.45),
+    rgba(255,255,255,0)
+  );
+  animation:spin 18s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.intro-card{
+  position:relative;
+  background:rgba(255,255,255,.22);
+  backdrop-filter:blur(22px);
+  padding:70px 48px;
+  border-radius:48px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 40px 120px rgba(0,0,0,.35);
+  z-index:2;
+}
+.intro-card h1{font-size:36px;margin-bottom:14px}
+.intro-card p{font-size:16px;opacity:.95}
+.intro-card button{
+  margin-top:40px;
+  padding:18px 60px;
+  border:none;
+  border-radius:40px;
+  font-size:17px;
+  cursor:pointer;
+  background:#fff;
+  color:#7a4bff;
+  box-shadow:0 18px 46px rgba(0,0,0,.4);
+}
+
+/* ===== หน้าหลัก ===== */
+.main{
+  position:relative;
+  z-index:10;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1.2s ease;
+}
+.main.show{opacity:1;transform:none}
+
+.card{
+  max-width:520px;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(22px);
+  border-radius:44px;
+  padding:60px 40px;
+  text-align:center;
+  box-shadow:0 50px 120px rgba(140,110,200,.38);
+}
+
+/* ===== รูปคู่ (ล็อกไม่หาย) ===== */
+.photo-wrap{
+  position:relative;
+  width:200px;
+  height:200px;
+  margin:0 auto 26px;
+  z-index:5;
+}
+.photo-glow{
+  position:absolute;
+  inset:-20px;
+  border-radius:50%;
+  background:conic-gradient(#e8ddff,#b99cff,#e8ddff);
+  filter:blur(16px);
+  animation:spin 20s linear infinite;
+}
+.photo{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  overflow:hidden;
+  border:7px solid #fff;
+  box-shadow:0 26px 70px rgba(140,110,200,.45);
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ===== ข้อความ ===== */
+h2{margin:26px 0 6px;font-size:32px;color:var(--deep)}
+.names{font-size:19px;color:#6a5f8f}
+.badge{
+  display:inline-block;
+  margin-top:12px;
+  padding:9px 24px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#cbb6ff,#9a7dff);
+  color:#fff;
+  font-size:14px;
+  box-shadow:0 14px 32px rgba(140,110,200,.45);
+}
+#loveTime{
+  margin-top:14px;
+  font-size:14px;
+  color:#6a5f8f;
+  line-height:1.8;
+}
+.msg{
+  margin-top:28px;
+  font-size:15px;
+  line-height:2;
+  color:#6a5f8f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+<div class="bg" id="bg"></div>
+
+<!-- หน้าเข้า -->
+<div id="intro">
+  <div class="intro-ring"></div>
+  <div class="intro-card">
+    <h1>สำหรับคนพิเศษ 💜</h1>
+    <p>แตะเพื่อเปิดความทรงจำของเรา</p>
+    <button onclick="enter()">✨ เปิดวันครบรอบ</button>
+  </div>
+</div>
+
+<!-- หน้าหลัก -->
+<div class="main" id="main">
+  <div class="card">
+
+    <div class="photo-wrap">
+      <div class="photo-glow"></div>
+      <div class="photo">
+        <img src="main.jpg">
+      </div>
+    </div>
+
+    <h2>Happy Anniversary</h2>
+    <div class="names">เอิร์ท 🤍 โอปอ</div>
+    <div class="badge">💜 1 Year • 8/02/68 💜</div>
+
+    <div id="loveTime"></div>
+
+    <div class="msg">
+      (แก้ข้อความตรงนี้ได้เอง)<br><br>
+      หนึ่งปีที่ผ่านมา  
+      ไม่ได้สมบูรณ์แบบ  
+      แต่เต็มไปด้วยความหมาย  
+      เพราะเรามีกันและกัน
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ===== เสียง Ambient อบอุ่นมาก ===== */
+let ctx, master;
+function startSound(){
+  ctx=new (window.AudioContext||window.webkitAudioContext)();
+  master=ctx.createGain();
+  master.gain.value=0.1;
+  master.connect(ctx.destination);
+
+  [174,196,220].forEach(f=>{
+    const o=ctx.createOscillator();
+    const g=ctx.createGain();
+    o.type="sine";
+    o.frequency.value=f;
+    g.gain.value=0;
+    o.connect(g);g.connect(master);
+    o.start();
+    setInterval(()=>{
+      g.gain.setTargetAtTime(0.04,ctx.currentTime,6);
+      setTimeout(()=>g.gain.setTargetAtTime(0,ctx.currentTime,7),10000);
+    },14000);
+  });
+}
+
+function enter(){
+  startSound();
+  intro.style.opacity=0;
+  setTimeout(()=>{
+    intro.style.display="none";
+    main.classList.add("show");
+  },1200);
+}
+
+/* ===== นับเวลาคบกันแบบเรียลไทม์ ===== */
+function updateLoveTime(){
+  const start = new Date(2025,1,8,7,40,0); // 8/02/2568 07:40
+  const now = new Date();
+  let diff = Math.floor((now-start)/1000);
+
+  const days=Math.floor(diff/86400);
+  diff%=86400;
+  const hours=Math.floor(diff/3600);
+  diff%=3600;
+  const mins=Math.floor(diff/60);
+  const secs=diff%60;
+
+  document.getElementById("loveTime").innerHTML =
+    `เราคบกันมาแล้ว 💕<br>
+     <b>${days}</b> วัน 
+     <b>${hours}</b> ชั่วโมง 
+     <b>${mins}</b> นาที 
+     <b>${secs}</b> วินาที`;
+}
+updateLoveTime();
+setInterval(updateLoveTime,1000);
+
+/* ===== ของลอย ===== */
+const bg=document.getElementById("bg");
+const hearts=["💜","🤍","✨"];
+const imgs=["pic1.jpg","pic2.jpg"];
+
+setInterval(()=>{
+  if(Math.random()>0.65){
+    const i=document.createElement("img");
+    i.src=imgs[Math.floor(Math.random()*imgs.length)];
+    i.className="float-img";
+    i.style.left=Math.random()*100+"vw";
+    i.style.animationDuration=(9+Math.random()*6)+"s";
+    bg.appendChild(i);
+    setTimeout(()=>i.remove(),17000);
+  }else{
+    const h=document.createElement("div");
+    h.className="float-heart";
+    h.textContent=hearts[Math.floor(Math.random()*hearts.length)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(16+Math.random()*18)+"px";
+    h.style.animationDuration=(9+Math.random()*6)+"s";
+    bg.appendChild(h);
+    setTimeout(()=>h.remove(),17000);
+  }
+},260);
+</script>
+
+</body>
+</html>
